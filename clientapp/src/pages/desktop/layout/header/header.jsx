@@ -4,7 +4,7 @@ function Header() {
     return (
         <div className={style.header}>
             <div></div>
-            <img src="/assets/images/test.png" alt="" srcset=""/>
+            <img src="/assets/images/test.png" alt="" />
         </div>
     )
 }
