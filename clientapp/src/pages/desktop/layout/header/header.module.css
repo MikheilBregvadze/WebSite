@@ -6,10 +6,12 @@
     top: 0;
     font-family: var(--fontLight);
     color:var(--mainColor);
+    border-bottom: 1px solid #2e3037;
 }
 .header div{
-    /* background-image: url('/assets/images/test.png'); */
+    background-image: url('/assets/images/test.png');
     width: 50px;
     height: 50px;
-    background:transparent;
+    /* background:transparent; */
+    background-size: contain;
 }
