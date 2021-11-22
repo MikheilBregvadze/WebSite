@@ -1,0 +1,12 @@
+#input{
+    color: var(--firstDetailColor);
+    background-color: var(--mainBgColor);
+    border: 1px solid var(--firstDetailColor);
+    border-radius: 5px;
+    height: 40px;
+    outline: none;
+}
+#input:focus-visible{
+    border: 2px solid #5b1374;
+    outline: none;
+}
