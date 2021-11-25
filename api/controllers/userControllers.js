@@ -3,16 +3,22 @@ const generateToken = require('../utils/generateToken');
 const User = require('../models/userModel');
 
 const registerUser = asyncHandler(async (req, res) => {
-    const { name, lastname, username, email, age, mobilenumber, mobilecode, password, terms, confirm_password } = req.body;
+    const { name, lastname, username, email, dateofbirth, mobilenumber, mobilecode, password, terms, confirm_password } = req.body;
+
+    const dateOfBirth = dateofbirth.split('/').reverse();
+    const age = _calculateAge(new Date(dateOfBirth[0], dateOfBirth[1], dateOfBirth[2]));
     const emailExists = await User.findOne({ email });
     const usernameExists = await User.findOne({ username });
 
     if (emailExists) {
         res.json({ status: 400, errorMessage: 'Email already taken' });
-        throw new Error('Email already taken');
+        // throw new Error('Email already taken');
+    } else if (age < 18) {
+        res.json({ status: 400, errorMessage: '18+' });
+        // throw new Error('Email already taken');
     } else if (usernameExists) {
         res.json({ status: 400, errorMessage: 'Username already taken' });
-        throw new Error('Username already taken');
+        // throw new Error('Username already taken');
     } else if (password !== confirm_password) {
         res.json({ status: 400, errorMessage: "Password don't match !" });
     } else if (!terms) {
@@ -24,7 +30,7 @@ const registerUser = asyncHandler(async (req, res) => {
         lastname,
         username,
         email,
-        age,
+        dateofbirth,
         mobilenumber,
         mobilecode,
         password,
@@ -33,13 +39,6 @@ const registerUser = asyncHandler(async (req, res) => {
 
     if(user) {
         res.json({
-            _id: user._id,
-            name: user.name,
-            lastname: user.lastname,
-            email: user.email,
-            age: user.age,
-            mobilenumber: user.mobilenumber,
-            mobilecode: user.mobilecode,
             token: generateToken(user._id)
         })
     } else {
@@ -51,3 +50,12 @@ const registerUser = asyncHandler(async (req, res) => {
 module.exports = {
     registerUser
 };
+
+
+function _calculateAge(birthday) {
+    var ageDifMs = Date.now() - birthday.getTime();
+    var ageDate = new Date(ageDifMs);
+    return Math.abs(ageDate.getUTCFullYear() - 1970);
+}
+
+// console.log(_calculateAge(new Date(1995, 02, 01)));
