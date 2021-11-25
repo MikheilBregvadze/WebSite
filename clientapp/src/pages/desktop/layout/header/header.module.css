@@ -29,7 +29,7 @@
     position: absolute;
 }
 .navigation{
-    font-size: 25px;
+    font-size: var(--fontSizeMd);
     display: flex;
     justify-content: space-evenly;
     list-style: none;
@@ -37,6 +37,7 @@
     height: 70px;
     align-items: center;
     box-shadow: inset 0px 0 20px 20px #8080800d;
+    margin-bottom: 0;
 }
 .navigationLink{
     text-decoration: none;
@@ -63,4 +64,16 @@
 }
 .navigationLink:hover:before{
     background-size: 100% 100%;
+}
+.swiperContainer{
+    position: absolute;
+    width: 100%;
+    left: 0%;
+}
+.sliderImage{
+    width: 100vw;
+    height: 32vw;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }

@@ -1,0 +1,29 @@
+.swiper-button-prev, .swiper-button-next{
+    color: #dd8888;
+}
+.swiper-button-prev:hover,
+.swiper-button-next:hover{
+    color: #fb4242;
+    transition: .3s ease;
+    transform: scale(1.1)
+}
+.swiper-pagination-progressbar .swiper-pagination-progressbar-fill{
+    background: #dd8888;
+}
+.swiper-pagination-bullet-active {
+    opacity: 1;
+    background: #fb4242;
+}
+.swiper-pagination-bullet{
+    width: 15px;
+    height: 15px;
+}
+.swiper-container-horizontal > .swiper-pagination-bullets{
+    bottom: 110px;
+}
+.swiper-button-next{
+    right: 20px;
+}
+.swiper-button-left{
+    left: 20px;
+}

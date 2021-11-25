@@ -1,9 +1,6 @@
 import React from 'react';
 import style from './CustomInput.module.css';
 function CustomInput(props){
-    const testStyle ={
-        display:"none"
-    }
     return (
     <input  
         type={props.type} 

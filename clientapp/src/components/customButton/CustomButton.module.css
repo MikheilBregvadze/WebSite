@@ -1,7 +1,7 @@
 .button{
     width: auto;
     height: 50px;
-    padding: 0 40px;
+    padding: 0 20px;
     border-radius: 5px;
     border: none;
     outline: none;
@@ -9,7 +9,7 @@
     background: var(--secondDetailColor);
     color: var(--mainBgColor);
     font-family: var(--fontBold);
-    font-size: var(--fontSizeLg);
+    font-size: var(--fontSizeMd);
     letter-spacing: 1px;
     transition: 0.2s;
 }
