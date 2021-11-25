@@ -1,0 +1,27 @@
+.button{
+    width: auto;
+    height: 50px;
+    padding: 0 40px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: var(--secondDetailColor);
+    color: var(--mainBgColor);
+    font-family: var(--fontBold);
+    font-size: var(--fontSizeLg);
+    letter-spacing: 1px;
+    transition: 0.2s;
+}
+.button:hover{
+    background: #0169af;
+    color:var(--mainColor);
+}
+.registration{
+    background: #00834c;
+    color: var(--mainBgColor);
+}
+.registration:hover{
+    background: #006239;
+    color: var(--mainColor);
+}

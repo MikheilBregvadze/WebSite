@@ -1,6 +1,7 @@
 body{
   width: 100vw;
   height: 100vh;
+  font-family: var(--fontLight);
 }
 #root,
 .App{
@@ -14,6 +15,7 @@ body{
   /* Background Color */
   --mainBgColor :#282c34;
   --firstDetailColor:#633573;
+  --secondDetailColor:#589dcb;
 
   /* Fonts */
   --fontBlack:'Plus-Black';
