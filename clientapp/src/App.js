@@ -1,6 +1,6 @@
 import React from 'react';
-import Router from './pages/desktop/layout/routes/routes';
-import Header from './pages/desktop/layout/header/header';
+import Router from './pages/desktop/layout/routes/Routes';
+import Header from './pages/desktop/layout/header/Header';
 
 import './index.css'
 
