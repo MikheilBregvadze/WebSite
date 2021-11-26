@@ -50,8 +50,8 @@ function Header() {
                 <Link className={style.logo} to="/"></Link>
                 <div className={style.headerFields} >
                     <CustomButton buttonType={"registration"} text="Registration" clickHandler={registrationHandler} />
-                    <CustomInput   placeholder="UserName" value={form.text} test={test('text')} type="text"/>
-                    <CustomInput  placeholder="Password" value={form.password} test={test('password')} type="password"/>
+                    <CustomInput inputType={"login"}  placeholder="UserName" value={form.text} test={test('text')} type="text"/>
+                    <CustomInput inputType={"login"} placeholder="Password" value={form.password} test={test('password')} type="password"/>
                     <CustomButton buttonType={"login"} type="submit" text="Enter" clickHandler={buttonHandler} />
                 </div>
             </div>

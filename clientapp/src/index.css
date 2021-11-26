@@ -14,8 +14,12 @@ body{
 
   /* Background Color */
   --mainBgColor :#282c34;
-  --firstDetailColor:#633573;
+  /* --firstDetailColor:#633573; */
+  --firstDetailColor:#ffca2a;
   --secondDetailColor:#589dcb;
+  --transparentBlackColor:#000000a6;
+  --detailGray:#3f4149;
+  --mainBlack:black;
 
   /* Fonts */
   --fontBlack:'Plus-Black';

@@ -1,7 +1,7 @@
 .input{
-    color: var(--firstDetailColor);
-    background-color: var(--mainBgColor);
-    border: 1px solid var(--firstDetailColor);
+    color: var(--mainColor);
+    background-color: var(--detailGray);
+    border: none;
     border-radius: 5px;
     height: 45px;
     outline: none;
@@ -9,6 +9,8 @@
     padding-left: 10px;
 }
 .input:focus-visible{
-    border: 2px solid #5b1374;
     outline: none;
+}
+.login{
+    
 }

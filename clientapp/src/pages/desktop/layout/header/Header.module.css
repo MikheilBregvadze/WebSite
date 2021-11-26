@@ -34,7 +34,7 @@
     justify-content: space-evenly;
     list-style: none;
     margin-top: 0;
-    height: 70px;
+    height: 45px;
     align-items: center;
     box-shadow: inset 0px 0 20px 20px #8080800d;
     margin-bottom: 0;
@@ -47,9 +47,9 @@
     position: relative;
 }
 .navigationLink:hover{
-    color: #ffffff;
+    color: var(--firstDetailColor);
 }
-.navigationLink:before{
+/* .navigationLink:before{
     content: '';
     position: absolute;
     width: 100%;
@@ -64,7 +64,7 @@
 }
 .navigationLink:hover:before{
     background-size: 100% 100%;
-}
+} */
 .swiperContainer{
     position: absolute;
     width: 100%;
@@ -76,4 +76,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+}
+.testinp{
+    display: none;
 }

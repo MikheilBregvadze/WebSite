@@ -5,8 +5,7 @@ function CustomInput(props){
     <input  
         type={props.type} 
         name=""
-        style={props.style}
-        className={style.input}
+        className={style[props.inputType] ? style[props.inputType] + ' ' + style.input : style.input}
         onChange={props.test}
         value={props.value}
         placeholder={props.placeholder}
