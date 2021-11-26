@@ -57,5 +57,3 @@ function _calculateAge(birthday) {
     var ageDate = new Date(ageDifMs);
     return Math.abs(ageDate.getUTCFullYear() - 1970);
 }
-
-// console.log(_calculateAge(new Date(1995, 02, 01)));
