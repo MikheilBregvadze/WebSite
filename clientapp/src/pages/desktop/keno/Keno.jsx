@@ -1,10 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
+import CustomModal from '../../../components/customModal/CustomModal'
 
 function Keno() {
+    const [showModal, setShowModal] = useState(true);
+    const closeModal = () => {
+        setShowModal(!showModal);
+    }
     return (
-        <div>
-            Keno
-        </div>
+        <CustomModal
+            isOpen={showModal}
+            closeModal={closeModal}
+        >
+            keno
+        </CustomModal>
     )
 }
 
