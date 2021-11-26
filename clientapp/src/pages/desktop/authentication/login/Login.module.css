@@ -1,0 +1,15 @@
+.form {
+    display: flex;
+}
+.formGroup {
+    position: relative;
+}
+
+.errorMessage {
+    position: absolute;
+    left: 15px;
+    z-index: 2;
+    bottom: -6px;
+    color: red;
+    font-size: 13px;
+}
