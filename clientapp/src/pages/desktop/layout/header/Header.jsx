@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import {Link} from "react-router-dom";
-import CustomButton from '../../../../components/customButton/CustomButton'
+import CustomButton from '../../../../components/customButton/CustomButton';
 import style from './Header.module.css';
 import Login from '../../authentication/login/Login';
-// import Logout from '../../authentication/logout/Logout'
-import ActiveUser from '../../authentication/activeUser/ActiveUser'
+// import Logout from '../../authentication/logout/Logout';
+import ActiveUser from '../../authentication/activeUser/ActiveUser';
+import Registration from '../../registration/Registration'
 import { getItemFromLocalStorage } from '../../../../services/common';
 
 function Header() {
@@ -18,9 +19,9 @@ function Header() {
         localStorage.removeItem("clientInfo");
         setClientInfo(null);
     }
-    const registrationHandler = () => {
+    // const registrationHandler = () => {
         
-    }
+    // }
     return (
         <>
             <div className={style.header}>
@@ -30,13 +31,14 @@ function Header() {
                         ? 
                         <div>
                             {/* {clientInfo.username} */}
-                            <ActiveUser clientInfo={clientInfo} />
+                            <ActiveUser clientInfo={clientInfo} clickHandler={logOut}/>
                             {/* <span onClick={logOut} className={style.logout}>logout</span> */}
                             {/* <Logout clickHandler={logOut} /> */}
                         </div> 
                         : 
                         <>
-                            <CustomButton buttonType={"registration"} text="Registration" clickHandler={registrationHandler} />
+                            {/* <CustomButton buttonType={"registration"} text="Registration"  /> */}
+                            <Registration/>
                             <Login updateHeader={updateHeader} />
                         </>
                     }

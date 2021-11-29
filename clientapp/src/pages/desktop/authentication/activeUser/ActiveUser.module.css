@@ -1,7 +1,7 @@
 .userDiv{
     position: absolute;
-    width: 117px;
-    height: 40px;
+    width: 150px;
+    height: 100%;
     /* padding: 0 10px; */
     color: var(--mainColor);
     display: flex;
@@ -15,10 +15,16 @@
 .userName{
     position: relative;
     font-family: var(--fontBold);
+    width: 73px;
+    text-align: right;
 }
 .userName:hover{
     transition: .1s ease;
     color: var(--firstDetailColor);
+}
+.userName:hover + .testContainer,
+.testContainer:hover{
+    display: flex;
 }
 .userName::after{
     content: '';
@@ -26,7 +32,49 @@
     width: 20px;
     height: 20px;
     position: absolute;
-    left: -25px;
+    left: 0;
     top: -1px;
     background-size: cover;
+}
+.testContainer{
+    position: absolute;
+    height: auto;
+    width: 217px;
+    top: 29px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    background: var(--detailGray);
+    padding: 18px;
+    left: -58px;
+    border-radius: 4px;
+    cursor: auto;
+    padding-top: 40px;
+    display: none;
+}
+.testContainer::after{
+    content: '';
+    position: absolute;
+    height: 19px;
+    top: -19px;
+    width: 100%;
+    left: 0;
+}
+.testContainer a{
+    cursor: pointer;
+    font-family: var(--fontBold);
+    height: 50px;
+    line-height: 50px;
+}
+.testContainer a:hover{
+    color: var(--firstDetailColor);
+}
+.logout{
+    text-align: right;
+}
+.companyLogo{
+    background-image: url('/assets/images/test.png');
+    width: 100px;
+    background-size: cover;
+    background-position: center;
 }

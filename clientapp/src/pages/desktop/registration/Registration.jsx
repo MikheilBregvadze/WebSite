@@ -15,7 +15,7 @@ function Registration() {
         <>
             <CustomButton 
                 buttonType={"registration"} 
-                text="Registration" 
+                text={"Registration"} 
                 clickHandler={registrationHandler}
             />
             <CustomModal
@@ -27,7 +27,7 @@ function Registration() {
                     <CustomInput inputType={"registration"} placeholder="Surname" />
                     <CustomInput inputType={"registration"} placeholder="Name"/>
                     <CustomInput inputType={"registration"} placeholder="Name"/>
-                    <label htmlFor="test">22l
+                    <label htmlFor="test" >22l
                      <CustomInput id={"test"} name="test" inputType={"registration"} placeholder="Name"/>
                     </label>
                 </div>
