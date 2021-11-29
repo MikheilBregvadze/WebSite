@@ -72,7 +72,9 @@ body {
 body::-webkit-scrollbar {
   display: none;
 }
-
+.ReactModal__Body--open{
+  overflow: hidden;
+}
 
 
 

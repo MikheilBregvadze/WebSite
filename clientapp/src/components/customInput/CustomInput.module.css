@@ -14,3 +14,7 @@
 .login{
     
 }
+.registration{
+    background-color: var(--mainColor);
+    color: var(--detailGray);
+}
