@@ -1,0 +1,32 @@
+.userDiv{
+    position: absolute;
+    width: 117px;
+    height: 40px;
+    /* padding: 0 10px; */
+    color: var(--mainColor);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    left: -127px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.userName{
+    position: relative;
+    font-family: var(--fontBold);
+}
+.userName:hover{
+    transition: .1s ease;
+    color: var(--firstDetailColor);
+}
+.userName::after{
+    content: '';
+    background: url('/assets/images/userIcon.png') center;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: -25px;
+    top: -1px;
+    background-size: cover;
+}

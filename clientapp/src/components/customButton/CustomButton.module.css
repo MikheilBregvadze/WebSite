@@ -1,7 +1,7 @@
 .button{
     width: auto;
-    height: 50px;
-    padding: 0 20px;
+    height: 40px;
+    padding: 0 10px;
     border-radius: 5px;
     border: none;
     outline: none;
@@ -24,4 +24,12 @@
 .registration:hover{
     background: #006239;
     color: var(--mainColor);
+}
+.button.logout{
+    background: red;
+    text-transform: uppercase;
+    color: var(--mainColor)
+}
+.button.logout:hover{
+    color: black;
 }

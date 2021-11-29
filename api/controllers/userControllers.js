@@ -9,7 +9,7 @@ const registerUser = asyncHandler(async (req, res) => {
     const age = _calculateAge(new Date(dateOfBirth[0], dateOfBirth[1], dateOfBirth[2]));
     const emailExists = await User.findOne({ email });
     const usernameExists = await User.findOne({ username });
-
+    console.log(age);
     if (emailExists) {
         res.json({ status: 400, errorMessage: 'Email already taken' });
         // throw new Error('Email already taken');
@@ -47,7 +47,28 @@ const registerUser = asyncHandler(async (req, res) => {
     }
 })
 
+
+const authUser = asyncHandler(async (req, res) => {
+    const { username, password } = req.body;
+
+    const user = await User.findOne({ username });
+
+    if (user && (await user.matchPassword(password))) {
+        res.json({
+            _id: user._id,
+            name: user.name,
+            username: user.username,
+            token: generateToken(user._id),
+        })
+    }else {
+        res.json({ status: 401, errorMessage: "Password or username don't match!" });
+        throw new Error('Invalid username or password')
+    }
+})
+
+
 module.exports = {
+    authUser,
     registerUser
 };
 
@@ -57,5 +78,3 @@ function _calculateAge(birthday) {
     var ageDate = new Date(ageDifMs);
     return Math.abs(ageDate.getUTCFullYear() - 1970);
 }
-
-// console.log(_calculateAge(new Date(1995, 02, 01)));

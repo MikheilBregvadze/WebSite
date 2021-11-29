@@ -1,30 +1,45 @@
-import React , {useState} from 'react';
+import React, { useState } from 'react';
 import {Link} from "react-router-dom";
-import CustomInput from '../../../../components/customInput/CustomInput'
 import CustomButton from '../../../../components/customButton/CustomButton'
-import Registration from '../../registration/Registration'
 import style from './Header.module.css';
+import Login from '../../authentication/login/Login';
+// import Logout from '../../authentication/logout/Logout'
+import ActiveUser from '../../authentication/activeUser/ActiveUser'
+import { getItemFromLocalStorage } from '../../../../services/common';
+
 function Header() {
-    const [form , setForm] = useState({
-        text:'',
-        password:''
-    });
-    const buttonHandler = () => {
-        setForm({text:'',password:""})
-    }
-    const setInput = input => e => {
-        setForm({...form,[input]:e.target.value})
+    const [clientInfo, setClientInfo] = useState(getItemFromLocalStorage('clientInfo'));
+
+    const updateHeader = (_clientInfo) => {
+        setClientInfo(_clientInfo)
     }
 
+    const logOut = () => {
+        localStorage.removeItem("clientInfo");
+        setClientInfo(null);
+    }
+    const registrationHandler = () => {
+        
+    }
     return (
         <>
             <div className={style.header}>
                 <Link className={style.logo} to="/"></Link>
                 <div className={style.headerFields} >
-                    <Registration/>
-                    <CustomInput inputType={"login"}  placeholder="UserName" value={form.text} setInput={setInput('text')} type="text"/>
-                    <CustomInput inputType={"login"} placeholder="Password" value={form.password} setInput={setInput('password')} type="password"/>
-                    <CustomButton buttonType={"login"} type="submit" text="Enter" clickHandler={buttonHandler} />
+                    { clientInfo && clientInfo.token 
+                        ? 
+                        <div>
+                            {/* {clientInfo.username} */}
+                            <ActiveUser clientInfo={clientInfo} />
+                            {/* <span onClick={logOut} className={style.logout}>logout</span> */}
+                            {/* <Logout clickHandler={logOut} /> */}
+                        </div> 
+                        : 
+                        <>
+                            <CustomButton buttonType={"registration"} text="Registration" clickHandler={registrationHandler} />
+                            <Login updateHeader={updateHeader} />
+                        </>
+                    }
                 </div>
             </div>
             <ul className={style.navigation}>
