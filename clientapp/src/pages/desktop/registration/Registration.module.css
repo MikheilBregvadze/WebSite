@@ -1,6 +1,62 @@
-.div{
+.registration{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 700px;
     height: 700px;
     background: var(--mainBgColor);
     border-radius: 5px;
+    overflow-y: scroll;
+}
+.registration::-webkit-scrollbar {
+    display: none;
+  }
+.registration .label{
+    width: 150px;
+    text-align: right;
+    font-family: var(--fontRegular);
+}
+.registration .inputContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 20px 0;
+    width: 100%;
+    justify-content: center;
+    position: relative;
+}
+.registration p{
+    font-family: var(--fontBold);
+    color: var(--errorRed);
+    font-size: 12px;
+    position: absolute;
+    top: 40px;
+    margin-left: 48px;
+}
+.termsCondition{
+    color: #918f8f;
+    font-family: var(--fontBold);
+    width: 80%;
+    text-align: center;
+}
+.registartionHeader{
+    background: var(--firstDetailColor);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding-left: 35px;
+    color: var(--mainBlack);
+    font-family: var(--fontMedium);
+    letter-spacing: 1px;
+    position: relative;
+}
+.registartionHeader::after{
+    content: '';
+    position: absolute;
+    left: -15px;
+    width: 50px;
+    height: 50px;
+    background-image: url(/assets/images/userIcon.png);
 }

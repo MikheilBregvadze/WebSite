@@ -33,3 +33,13 @@
 .button.logout:hover{
     color: black;
 }
+.submitRegistration{
+    background: var(--firstDetailColor);
+    height: 60px;
+    padding: 0 50px;
+    color: var(--mainBlack);
+}
+.submitRegistration:hover{
+    background: var(--firstDetailHover);
+    color: var(--mainBlack);
+}

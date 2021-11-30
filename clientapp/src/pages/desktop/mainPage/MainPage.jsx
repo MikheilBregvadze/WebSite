@@ -104,10 +104,6 @@ const gameNames = [{
 function MainPage() {
     const videoRef = useRef(null)
     useEffect(() => {
-        // document.querySelector(`video`).play();
-        // if(videoRef){
-        //     videoRef.current.play()
-        // }
         document.querySelectorAll(`video`).forEach((button) => {
             button.play()
         });

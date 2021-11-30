@@ -20,6 +20,8 @@ body{
   --transparentBlackColor:#000000a6;
   --detailGray:#3f4149;
   --mainBlack:black;
+  --errorRed:#f11;
+  --firstDetailHover:#ffdd78;
 
   /* Fonts */
   --fontBlack:'Plus-Black';
