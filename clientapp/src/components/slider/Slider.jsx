@@ -21,7 +21,7 @@ function Slider(props) {
             >
             {props.sliderItemObject.map(sliderItem => 
                 <SwiperSlide 
-                    style={{backgroundImage:`url(${sliderItem.url})`}} 
+                    style={{backgroundImage:`url(${require('../../assets/images/' + sliderItem.url).default})`}} 
                     key={sliderItem.id} 
                     className={props.sliderImage}
                 />

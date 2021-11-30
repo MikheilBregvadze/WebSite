@@ -7,35 +7,35 @@ import 'swiper/swiper-bundle.css';
 SwiperCore.use([Navigation, Pagination, Autoplay]);
 const sliderItemObject  = [{
         sliderGameName:'testImg',
-        url:'/assets/images/swipe.jpg',
+        url:'swipe.jpg',
         id:0
     },{
         sliderGameName:'testImg1',
-        url:'/assets/images/swipe1.jpg',
+        url:'swipe1.jpg',
         id:1
     },{
         sliderGameName:'testImg2',
-        url:'/assets/images/swipe2.jpg',
+        url:'swipe2.jpg',
         id:2
     },{
         sliderGameName:'testImg3',
-        url:'/assets/images/swipe3.jpg',
+        url:'swipe3.jpg',
         id:3
     },{
         sliderGameName:'testImg4',
-        url:'/assets/images/swipe4.jpg',
+        url:'swipe4.jpg',
         id:4
     },{
         sliderGameName:'testImg5',
-        url:'/assets/images/swipe5.jpg',
+        url:'swipe5.jpg',
         id:5
     },{
         sliderGameName:'testImg6',
-        url:'/assets/images/swipe6.jpg',
+        url:'swipe6.jpg',
         id:6
     },{
         sliderGameName:'testImg7',
-        url:'/assets/images/swipe7.jpg',
+        url:'swipe7.jpg',
         id:7
     },
 ]
@@ -55,48 +55,48 @@ const videoObject = [{
 ]
 const gameNames = [{
         gameName:'burninghot',
-        url:'/assets/images/burninghot.jpg',
+        url:'burninghot.jpg',
         id:0
     },{
         gameName:'alexander',
-        url:'/assets/images/alexander.jpg',
+        url:'alexander.jpg',
         id:1
     },{
         gameName:'aot',
-        url:'/assets/images/aot.jpg',
+        url:'aot.jpg',
         id:2
     },{
         gameName:'burningice',
-        url:'/assets/images/burningice.jpg',
+        url:'burningice.jpg',
         id:3
     },{
         gameName:'evolution',
-        url:'/assets/images/evolution.jpg',
+        url:'evolution.jpg',
         id:4
     },
     {
         gameName:'magicgarden40',
-        url:'/assets/images/magicgarden40.jpg',
+        url:'magicgarden40.jpg',
         id:5
     },
     {
         gameName:'moonstone',
-        url:'/assets/images/moonstone.jpg',
+        url:'moonstone.jpg',
         id:6
     },
     {
         gameName:'pengun',
-        url:'/assets/images/pengun.jpg',
+        url:'pengun.jpg',
         id:7
     },
     {
         gameName:'spinx',
-        url:'/assets/images/spinx.jpg',
+        url:'spinx.jpg',
         id:8
     },
     {
         gameName:'superhot40',
-        url:'/assets/images/superhot40.jpg',
+        url:'superhot40.jpg',
         id:9
     },
 ]
@@ -116,14 +116,14 @@ function MainPage() {
             <div className={style.mainPageGamesLeft}>
                 {
                     gameNames.map( game =>
-                        <a key={game.id} className={style.gameSmSideSlider} style={{backgroundImage:`url(${game.url})`}} ></a>
+                        <a key={game.id} className={style.gameSmSideSlider} style={{backgroundImage:`url(${require('../../../assets/images/' + game.url).default})`}} ></a>
                     )
                 }
             </div>
             <div className={style.mainPageGamesRight}>
                 {
                     gameNames.map( game =>
-                        <a key={game.id} className={style.gameSmSideSlider} style={{backgroundImage:`url(${game.url})`}} ></a>
+                        <a key={game.id} className={style.gameSmSideSlider} style={{backgroundImage:`url(${require('../../../assets/images/' + game.url).default})`}} ></a>
                     )
                 }
             </div>
