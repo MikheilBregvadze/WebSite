@@ -58,7 +58,7 @@
     left: 17px;
     width: 31px;
     height: 25px;
-    background-image: url(/assets/images/newUser.png);
+    background-image: url(../../../assets/images/newUser.png);
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -68,13 +68,13 @@
     right: 17px;
     width: 31px;
     height: 31px;
-    background-image: url(/assets/images/close.png),url(/assets/images/close-hover.png);
+    background-image: url(../../../assets/images/close.png),url(../../../assets/images/close-hover.png);
     background-size: cover;
     background-repeat: no-repeat;
     cursor: pointer;
 }
 .close:hover{
     opacity: 0.8;
-    background: url(/assets/images/close-hover.png);
+    background: url(../../../assets/images/close-hover.png);
     background-size: cover;
 }

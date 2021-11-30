@@ -29,7 +29,7 @@
 }
 .userName::after{
     content: '';
-    background: url('/assets/images/userIcon.png') center;
+    background: url('../../../../assets/images/userIcon.png') center;
     width: 20px;
     height: 20px;
     position: absolute;
@@ -74,7 +74,7 @@
     text-align: right;
 }
 .companyLogo{
-    background-image: url('/assets/images/test.png');
+    background-image: url('../../../../assets/images/test.png');
     width: 100px;
     background-size: cover;
     background-position: center;
