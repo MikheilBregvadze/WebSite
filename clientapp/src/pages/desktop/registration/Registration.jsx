@@ -27,6 +27,7 @@ function Registration() {
             >
                     <div className={style.registartionHeader}>
                         Fast and easy registration
+                        <span className={style.close} onClick={closeModal}></span>
                     </div>
                 <div className={style.registration} >
                     <div className={style.inputContainer}>

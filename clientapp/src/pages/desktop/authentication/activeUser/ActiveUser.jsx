@@ -3,7 +3,6 @@ import style from './ActiveUser.module.css';
 import Logout from '../logout/Logout'
 import CustomButton from '../../../../components/customButton/CustomButton'
 function ActiveUser(props) {
-    console.log(props.clickHandler)
     return (
         <div className={style.userDiv}>
             <CustomButton buttonType={"registration"} text="Balance" />

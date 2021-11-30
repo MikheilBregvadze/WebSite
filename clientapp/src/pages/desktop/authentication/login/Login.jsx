@@ -16,7 +16,7 @@ function Login({updateHeader}) {
         setError(null);
         setForm({...form, [input]:e.target.value})
     }
-
+    
     const buttonHandler = (event) => {
         event.preventDefault()
         ClientAuthorization(form)
