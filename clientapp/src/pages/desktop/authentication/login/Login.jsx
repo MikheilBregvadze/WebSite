@@ -55,7 +55,7 @@ function Login({updateHeader}) {
                 />
             </div>
             <CustomButton 
-                text="Enter" 
+                text="Log in" 
                 type="submit" 
                 buttonType={"login"} 
                 clickHandler={buttonHandler} 

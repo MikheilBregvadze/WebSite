@@ -9,6 +9,7 @@ function CustomInput(props){
         className={style[props.inputType] ? style[props.inputType] + ' ' + style.input : style.input}
         placeholder={props.placeholder}
         onChange={props.onChangeHandler}
+        id={props.id}
     />
 
     )

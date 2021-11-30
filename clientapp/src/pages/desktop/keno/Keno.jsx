@@ -6,13 +6,8 @@ function Keno() {
     const closeModal = () => {
         setShowModal(!showModal);
     }
-    return (
-        <CustomModal
-            isOpen={showModal}
-            closeModal={closeModal}
-        >
-            keno
-        </CustomModal>
+    return (            
+            'keno'
     )
 }
 
