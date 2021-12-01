@@ -21,7 +21,9 @@ export function AuthorizedGet(url) {
 export const ClientAuthorization = (data) => {
     return axios.post('/api/users/login', data);
 }
-
+export const ClientRegistration = (data) => {
+    return axios.post('/api/users', data);
+}
 // Authorized Calls
 export const GetClientInfo = () => {
     return AuthorizedGet('/api/users/profile');

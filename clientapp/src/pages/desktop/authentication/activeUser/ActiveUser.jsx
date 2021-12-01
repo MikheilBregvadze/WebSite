@@ -10,13 +10,17 @@ function ActiveUser(props) {
             <CustomButton buttonType={"account"} text="Account" />
             <span className={style.userName} >{props.clientInfo.username}</span>
             <div className={style.navigation}>
-                    <a className={style.companyLogo}></a>
                     <NavLink to="/client/profile" className={({ isActive }) => `${style.account} ${isActive ? style.active : ''}`}>Account management</NavLink>
-                    {/* <a className={style.account } >Account management</a> */}
+                    <NavLink to="/client/messages" className={({ isActive }) => `${style.messages} ${isActive ? style.active : ''}`}>Messages</NavLink>
+                    <NavLink to="/client/security" className={({ isActive }) => `${style.security} ${isActive ? style.active : ''}`}>Security Settings</NavLink>
+                    <NavLink to="/client/transaction" className={({ isActive }) => `${style.transactions} ${isActive ? style.active : ''}`}>Transactions history</NavLink>
+                    
+
+                    {/* <a className={style.account } >Account management</a>
                     <a className={style.messages } >Messages</a>
                     <a className={style.password }>Change password</a>
                     <a className={style.security }>Security Settings</a>
-                    <a className={style.transactions }>Transcations history</a>
+                    <a className={style.transactions }>Transcations history</a> */}
                     <a className={style.logout} >
                         <Logout clickHandler={props.clickHandler}/>
                     </a>

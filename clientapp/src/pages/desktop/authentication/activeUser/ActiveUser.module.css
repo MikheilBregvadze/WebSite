@@ -101,7 +101,7 @@
     color: var(--firstDetailColor);
 }
 .active {
-    color: var(--firstDetailColor) !important;
+    color: var(--firstDetailColor) ;
 }
 .logout{
     justify-content: flex-end;

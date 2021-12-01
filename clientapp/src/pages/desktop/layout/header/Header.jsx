@@ -1,4 +1,5 @@
 import React, { useState, useContext } from 'react';
+import { NavLink } from "react-router-dom";
 import {Link} from "react-router-dom";
 import CustomButton from '../../../../components/customButton/CustomButton';
 import style from './Header.module.css';
@@ -44,13 +45,13 @@ function Header() {
                 </div>
             </div>
             <ul className={style.navigation}>
-                <li> <Link className={style.navigationLink} to="/">Main</Link> </li>
-                <li> <Link className={style.navigationLink} to="/casino">Casino</Link> </li>
-                <li> <Link className={style.navigationLink} to="/slots">Slots</Link> </li>
-                <li> <Link className={style.navigationLink} to="/keno">Keno</Link> </li>
-                <li> <Link className={style.navigationLink} to="/jetx">JetX</Link> </li>
-                <li> <Link className={style.navigationLink} to="/games">Games</Link> </li>
-                <li> <Link className={style.navigationLink} to="/boardgames">Boardgames</Link> </li>
+                <NavLink to="/" className={({ isActive }) => `${style.navigationLink} ${isActive ? style.active : ''}`}>Main</NavLink>
+                <NavLink to="/casino" className={({ isActive }) => `${style.navigationLink} ${isActive ? style.active : ''}`}>Casino</NavLink>
+                <NavLink to="/slots" className={({ isActive }) => `${style.navigationLink} ${isActive ? style.active : ''}`}>Slots</NavLink>
+                <NavLink to="/keno" className={({ isActive }) => `${style.navigationLink} ${isActive ? style.active : ''}`}>Keno</NavLink>
+                <NavLink to="/jetx" className={({ isActive }) => `${style.navigationLink} ${isActive ? style.active : ''}`}>JetX</NavLink>
+                <NavLink to="/games" className={({ isActive }) => `${style.navigationLink} ${isActive ? style.active : ''}`}>Games</NavLink>
+                <NavLink to="/boardgames" className={({ isActive }) => `${style.navigationLink} ${isActive ? style.active : ''}`}>Boardgames</NavLink>
             </ul>
         </>
     )

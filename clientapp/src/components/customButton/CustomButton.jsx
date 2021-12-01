@@ -1,7 +1,6 @@
 import React from 'react';
 import style from './CustomButton.module.css'
 function CustomButton({type,text,clickHandler,buttonType}) {
-    console.log(type)
     return (
         <button 
             type={type}

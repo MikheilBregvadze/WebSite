@@ -1,15 +1,18 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import MainPage from '../../mainPage/MainPage';
-import Casino from '../../casino/Casino'
-import Slots from '../../slots/Slots'
-import Keno from '../../keno/Keno'
-import JetX from '../../jetx/JetX'
-import Games from '../../games/Games'
-import Boardgames from '../../boardgames/Boardgames'
+import Casino from '../../casino/Casino';
+import Slots from '../../slots/Slots';
+import Keno from '../../keno/Keno';
+import JetX from '../../jetx/JetX';
+import Games from '../../games/Games';
+import Boardgames from '../../boardgames/Boardgames';
 import Profile from '../../profile/Profile';
 import ProtectedRoute from './ProtectedRoute';
 import PersonalInformation from '../../profile/personalinformation/PersonalInformation';
+import Messages from '../../messages/Messages';
+import Security from '../../security/Security';
+import Transaction from '../../transaction/Transaction';
 
 function Router() {
     return (
@@ -25,6 +28,9 @@ function Router() {
             <Route exact path="/client/profile" element={<div><Profile /><ProtectedRoute /></div>}>
                 <Route path="" element={<PersonalInformation />} /> 
             </Route>
+            <Route path="/client/messages" element={<Messages />}/>
+            <Route path="/client/security" element={<Security />}/>
+            <Route path="/client/transaction" element={<Transaction />}/>
         </Routes>
     )
 }
