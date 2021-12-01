@@ -2,6 +2,7 @@ const express = require('express');
 const morgan = require('morgan');
 const dotenv = require('dotenv');
 const connectDB = require("./config/db.js");
+const path = require("path");
 
 const userRoutes = require("./routes/userRoutes.js");
 
@@ -13,6 +14,13 @@ const app = express();
 
 if(process.env.NODE_ENV === 'development') {
     app.use(morgan('dev'));
+}
+
+if(process.env.NODE_ENV === 'production') {
+    app.use(express.static('clientapp/build'));
+    app.get('*', (req, res) => {
+        res.sendFile(path.resolve(__dirname, 'clientapp', 'build', 'index.html'))
+    })
 }
 
 app.use(express.json());
