@@ -5,8 +5,8 @@ import CustomButton from '../../../../components/customButton/CustomButton'
 function ActiveUser(props) {
     return (
         <div className={style.userDiv}>
-            <CustomButton buttonType={"registration"} text="Balance" />
-            <CustomButton buttonType={"registration"} text="Acount" />
+            <CustomButton buttonType={"balance"} text="Balance" />
+            <CustomButton buttonType={"account"} text="Account" />
             <span className={style.userName} >{props.clientInfo.username}</span>
             <div className={style.testContainer}>
                     <a className={style.companyLogo}></a>

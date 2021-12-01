@@ -17,7 +17,7 @@
     font-family: var(--fontBold);
     width: 73px;
     text-align: right;
-    margin-left: 110px;
+    margin-left: 20px;
 }
 .userName:hover{
     transition: .1s ease;
@@ -47,7 +47,7 @@
     flex-direction: column;
     background: var(--detailGray);
     padding: 18px;
-    left: 156px;
+    left: 103px;
     border-radius: 4px;
     cursor: auto;
     padding-top: 40px;

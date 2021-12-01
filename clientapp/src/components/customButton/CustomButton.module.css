@@ -43,3 +43,20 @@
     background: var(--firstDetailHover);
     color: var(--mainBlack);
 }
+.account{
+    background: var(--firstDetailColor);
+    color: var(--mainBlack);
+}
+.account:hover{
+    background: var(--firstDetailHover);
+    color: var(--mainBlack);
+}
+.balance{
+    background: var(--mainGreen);;
+    color: var(--mainBlack);
+    margin-right: 5px;
+}
+.balance:hover{
+    background: #49e53e;
+    color: var(--mainBlack);
+}
