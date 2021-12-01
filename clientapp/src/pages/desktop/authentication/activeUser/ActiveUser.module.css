@@ -23,8 +23,8 @@
     transition: .1s ease;
     color: var(--firstDetailColor);
 }
-.userName:hover + .testContainer,
-.testContainer:hover{
+.userName:hover + .navigation,
+.navigation:hover{
     display: flex;
 }
 .userName::after{
@@ -37,23 +37,23 @@
     top: -1px;
     background-size: cover;
 }
-.testContainer{
+.navigation{
     position: absolute;
     height: auto;
-    width: 217px;
+    width: 240px;
     top: 29px;
     z-index: 2;
     display: flex;
     flex-direction: column;
     background: var(--detailGray);
     padding: 18px;
-    left: 103px;
+    left: 84px;
     border-radius: 4px;
     cursor: auto;
     padding-top: 40px;
     display: none;
 }
-.testContainer::after{
+.navigation::after{
     content: '';
     position: absolute;
     height: 19px;
@@ -61,17 +61,44 @@
     width: 100%;
     left: 0;
 }
-.testContainer a{
+.navigation a{
     cursor: pointer;
     font-family: var(--fontBold);
     height: 50px;
     line-height: 50px;
+    position: relative;
+    display: flex;
+    align-items: center;
 }
-.testContainer a:hover{
+.navigation a::before{
+    content: '';
+    width: 25px;
+    height: 25px;
+    background-size: cover;
+    margin-left: -9px;
+    margin-right: 9px;
+}
+
+.navigation a.account::before{
+    background-image: url(../../../../assets/images/account.png);
+}
+.navigation a.messages::before{
+    background-image: url(../../../../assets/images/messages.png);
+}
+.navigation a.security::before{
+    background-image: url(../../../../assets/images/security.png);
+}
+.navigation a.transactions::before{
+    background-image: url(../../../../assets/images/transaction.png);
+}
+.navigation a.password::before{
+    background-image: url(../../../../assets/images/password.png);
+}
+.navigation a:hover{
     color: var(--firstDetailColor);
 }
 .logout{
-    text-align: right;
+    justify-content: flex-end;
 }
 .companyLogo{
     background-image: url('../../../../assets/images/test.png');
