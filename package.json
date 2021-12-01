@@ -4,10 +4,12 @@
   "description": "Web Site",
   "main": "server.js",
   "scripts": {
-    "start": "node api/server.js",
-    "server": "nodemon api/server.js",
+    "clientapp-install": "npm install --prefix clientapp",
+    "start": "node server.js",
+    "server": "nodemon server.js",
     "clientapp": "npm start --prefix clientapp",
-    "dev": "concurrently \"npm run server\" \"npm run clientapp\""
+    "dev": "concurrently \"npm run server\" \"npm run clientapp\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix clientapp && npm run build --prefix clientapp"
   },
   "repository": {
     "type": "git",

@@ -3,29 +3,32 @@ const generateToken = require('../utils/generateToken');
 const User = require('../models/userModel');
 
 const registerUser = asyncHandler(async (req, res) => {
-    const { name, lastname, username, email, dateofbirth, mobilenumber, mobilecode, password, terms, confirm_password } = req.body;
+    const { id, name, lastname, username, email, dateofbirth, mobilenumber, mobilecode, password, confirm_password } = req.body;
 
     const dateOfBirth = dateofbirth.split('/').reverse();
-    const age = _calculateAge(new Date(dateOfBirth[0], dateOfBirth[1], dateOfBirth[2]));
+    const age = _calculateAge(new Date(dateOfBirth[0], dateOfBirth[2], dateOfBirth[1]));
     const emailExists = await User.findOne({ email });
     const usernameExists = await User.findOne({ username });
-    console.log(age);
+    const idExists = await User.findOne({ id });
+    
     if (emailExists) {
         res.json({ status: 400, errorMessage: 'Email already taken' });
-        // throw new Error('Email already taken');
+        throw new Error('Email already taken');
+    } else if (idExists) {
+        res.json({ status: 400, errorMessage: 'Id number already taken' });
+        throw new Error('Email already taken');
     } else if (age < 18) {
         res.json({ status: 400, errorMessage: '18+' });
-        // throw new Error('Email already taken');
+        throw new Error('Email already taken');
     } else if (usernameExists) {
         res.json({ status: 400, errorMessage: 'Username already taken' });
-        // throw new Error('Username already taken');
+        throw new Error('Username already taken');
     } else if (password !== confirm_password) {
         res.json({ status: 400, errorMessage: "Password don't match !" });
-    } else if (!terms) {
-        res.json({ status: 400, errorMessage: "Accept terms required!" });
-    }
+    } 
 
     const user = await User.create({
+        id,
         name,
         lastname,
         username,
@@ -34,7 +37,6 @@ const registerUser = asyncHandler(async (req, res) => {
         mobilenumber,
         mobilecode,
         password,
-        terms
     });
 
     if(user) {
