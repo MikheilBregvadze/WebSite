@@ -1,56 +1,15 @@
-.container {
-    width: 900px;
-    margin: auto;
-    padding-top: 30px;
-}
-
-.container h1 {
-    color: var(--firstDetailColor);
-    font-size: var(--fontSizeLg);
-}
-
-.container h3 {
-    font-size: var(--fontSizeMd);
-}
-
-.item {
-    border-top: 1px solid var(--detailGray);
-    /* border-bottom: 1px solid var(--detailGray); */
+.navigation a {
+    text-decoration: none;
+    color: var(--mainColor);
+    cursor: pointer;
+    font-family: var(--fontBold);
+    height: 50px;
+    line-height: 50px;
+    position: relative;
     display: flex;
     align-items: center;
-    font-size: var(--fontSizeSm);
 }
 
-.item p {
-    font-family: var(--fontMedium);
-}
-
-.item p:first-child{
-    width: 30%;
-    padding-left: 10px;
-    color: var(--mainGray);
-}
-.accountInformation,
-.contactDetails,
-.personalDetails {
-    margin-top: 40px;
-    padding-left: 20px;
-}
-
-.personalDetailsList .item:last-child,
-.contactDetailsList .item:last-child,
-.accountInformation .item:last-child {
-    border-bottom: 1px solid var(--detailGray);
-}
-
-.edit {
-    width: 115px;
-    height: 15px;
-    cursor: pointer;
-    margin-left: 70px;
-    background: url('../../../assets/images/edit.png') no-repeat;
-}
-
-.editable {
-    width: 20%;
+.active {
+    color: var(--firstDetailColor) !important;
 }
