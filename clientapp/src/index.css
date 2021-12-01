@@ -11,6 +11,7 @@ body{
 :root {
   /*  Colors */
   --mainColor: #ffffff;
+  --mainGray: #b7b6b6;
 
   /* Background Color */
   --mainBgColor :#282c34;

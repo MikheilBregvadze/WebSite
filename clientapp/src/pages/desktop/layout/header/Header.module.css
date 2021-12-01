@@ -42,7 +42,7 @@
 }
 .navigationLink {
   text-decoration: none;
-  color: #b7b6b6;
+  color: var(--mainGray);
   letter-spacing: 1px;
   font-family: var(--fontExtraBold);
   position: relative;

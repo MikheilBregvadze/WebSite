@@ -70,12 +70,17 @@ const authUser = asyncHandler(async (req, res) => {
 
 const getUserProfile = asyncHandler(async (req, res) => {
     const user = await User.findById(req.user._id);
-
     if (user) {
         res.json({
             _id: user._id,
+            name: user.name,
+            lastname: user.lastname,
+            personalId: user.id,
             username: user.name,
-            email: user.email
+            email: user.email,
+            dateofbirth: user.dateofbirth,
+            mobilecode: user.mobilecode,
+            mobilenumber: user.mobilenumber,
         })
     }else {
         res.status(404);
