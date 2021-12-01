@@ -7,9 +7,9 @@ const config = {
     }
 }
 
-export function authorizedGet(url) {
+export function AuthorizedGet(url) {
     let accessToken = getItemFromLocalStorage('accessToken');
-    return axios.get('api' + url,{
+    return axios.get(url,{
         headers: {
             'Authorization': `Bearer ${accessToken}`
         }
@@ -20,4 +20,9 @@ export function authorizedGet(url) {
 
 export const ClientAuthorization = (data) => {
     return axios.post('/api/users/login', data);
+}
+
+// Authorized Calls
+export const GetClientInfo = () => {
+    return AuthorizedGet('/api/users/profile');
 }

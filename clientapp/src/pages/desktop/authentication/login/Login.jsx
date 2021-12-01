@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import CustomInput from '../../../../components/customInput/CustomInput'
 import CustomButton from '../../../../components/customButton/CustomButton'
 import { ClientAuthorization } from '../../../../services/services'
-import { setItemToLocalStorage } from '../../../../services/common'
+import { Auth } from '../../../../services/context/AuthContext'
 import style from './Login.module.css'
 
 function Login({updateHeader}) {
@@ -11,6 +11,8 @@ function Login({updateHeader}) {
         username:'',
         password:''
     });
+
+    const { authenticate } = useContext(Auth);
 
     const onChangeValue = input => e => {
         setError(null);
@@ -25,9 +27,9 @@ function Login({updateHeader}) {
                     setError(res.data.errorMessage)
                     return false
                 }
-                updateHeader(res.data)
-                setForm({username:'',password:""})
-                if(res.data.token) setItemToLocalStorage('clientInfo', res.data)
+                if(res.data.token) {
+                    authenticate(res.data.token);
+                }
             })
             .catch(error => console.log(error))
     }

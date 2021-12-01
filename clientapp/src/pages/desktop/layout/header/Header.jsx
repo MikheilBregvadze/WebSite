@@ -1,24 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import {Link} from "react-router-dom";
 import CustomButton from '../../../../components/customButton/CustomButton';
 import style from './Header.module.css';
 import Login from '../../authentication/login/Login';
 // import Logout from '../../authentication/logout/Logout';
+import { Auth } from '../../../../services/context/AuthContext';
 import ActiveUser from '../../authentication/activeUser/ActiveUser';
-import Registration from '../../registration/Registration'
+import Registration from '../../registration/Registration';
 import { getItemFromLocalStorage } from '../../../../services/common';
 
 function Header() {
-    const [clientInfo, setClientInfo] = useState(getItemFromLocalStorage('clientInfo'));
+    const { auth, clientInfo, logOut } = useContext(Auth);
+    
 
-    const updateHeader = (_clientInfo) => {
-        setClientInfo(_clientInfo)
-    }
-
-    const logOut = () => {
-        localStorage.removeItem("clientInfo");
-        setClientInfo(null);
-    }
+    // const logOut = () => {
+    //     localStorage.removeItem("clientInfo");
+    //     setClientInfo(null);
+    // }
     // const registrationHandler = () => {
         
     // }
@@ -27,11 +25,12 @@ function Header() {
             <div className={style.header}>
                 <Link className={style.logo} to="/"></Link>
                 <div className={style.headerFields} >
-                    { clientInfo && clientInfo.token 
+                    { auth && clientInfo
                         ? 
                         <div>
                             {/* {clientInfo.username} */}
-                            <ActiveUser clientInfo={clientInfo} clickHandler={logOut}/>
+                            <ActiveUser clientInfo={clientInfo} clickHandler={() => logOut()} />
+                            {/* <ActiveUser clientInfo={clientInfo} clickHandler={logOut}/> */}
                             {/* <span onClick={logOut} className={style.logout}>logout</span> */}
                             {/* <Logout clickHandler={logOut} /> */}
                         </div> 
@@ -39,7 +38,7 @@ function Header() {
                         <>
                             {/* <CustomButton buttonType={"registration"} text="Registration"  /> */}
                             <Registration/>
-                            <Login updateHeader={updateHeader} />
+                            <Login />
                         </>
                     }
                 </div>
