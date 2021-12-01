@@ -61,7 +61,9 @@
     width: 100%;
     left: 0;
 }
-.navigation a{
+.navigation a {
+    text-decoration: none;
+    color: var(--mainColor);
     cursor: pointer;
     font-family: var(--fontBold);
     height: 50px;
@@ -94,8 +96,12 @@
 .navigation a.password::before{
     background-image: url(../../../../assets/images/password.png);
 }
+
 .navigation a:hover{
     color: var(--firstDetailColor);
+}
+.active {
+    color: var(--firstDetailColor) !important;
 }
 .logout{
     justify-content: flex-end;

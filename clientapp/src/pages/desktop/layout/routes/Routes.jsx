@@ -7,6 +7,7 @@ import Keno from '../../keno/Keno'
 import JetX from '../../jetx/JetX'
 import Games from '../../games/Games'
 import Boardgames from '../../boardgames/Boardgames'
+import Profile from '../../profile/Profile';
 function Router() {
     return (
         <Routes>
@@ -17,6 +18,7 @@ function Router() {
             <Route path="/jetx" element={<JetX />}/>
             <Route path="/games" element={<Games />}/>
             <Route path="/boardgames" element={<Boardgames />}/>
+            <Route path="/client/profile" element={<Profile />}/>
 
         </Routes>
     )

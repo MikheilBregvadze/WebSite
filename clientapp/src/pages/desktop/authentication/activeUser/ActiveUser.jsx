@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from "react-router-dom";
 import style from './ActiveUser.module.css';
 import Logout from '../logout/Logout'
 import CustomButton from '../../../../components/customButton/CustomButton'
@@ -10,7 +11,8 @@ function ActiveUser(props) {
             <span className={style.userName} >{props.clientInfo.username}</span>
             <div className={style.navigation}>
                     <a className={style.companyLogo}></a>
-                    <a className={style.account } >Account management</a>
+                    <NavLink to="/client/profile" className={({ isActive }) => `${style.account} ${isActive ? style.active : ''}`}>Account management</NavLink>
+                    {/* <a className={style.account } >Account management</a> */}
                     <a className={style.messages } >Messages</a>
                     <a className={style.password }>Change password</a>
                     <a className={style.security }>Security Settings</a>

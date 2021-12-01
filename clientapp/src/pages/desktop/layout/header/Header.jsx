@@ -25,11 +25,11 @@ function Header() {
             <div className={style.header}>
                 <Link className={style.logo} to="/"></Link>
                 <div className={style.headerFields} >
-                    { auth && clientInfo
+                    { auth 
                         ? 
                         <div>
                             {/* {clientInfo.username} */}
-                            <ActiveUser clientInfo={clientInfo} clickHandler={() => logOut()} />
+                            {clientInfo && <ActiveUser clientInfo={clientInfo} clickHandler={() => logOut()} />}
                             {/* <ActiveUser clientInfo={clientInfo} clickHandler={logOut}/> */}
                             {/* <span onClick={logOut} className={style.logout}>logout</span> */}
                             {/* <Logout clickHandler={logOut} /> */}
