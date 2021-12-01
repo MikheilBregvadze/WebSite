@@ -18,12 +18,12 @@
     color:var(--mainColor);
 }
 .registration{
-    background: #00834c;
+    background: var(--mainGreen);
     color: var(--mainBgColor);
 }
 .registration:hover{
-    background: #006239;
-    color: var(--mainColor);
+    background: #49e53e;
+    color: var(--mainBgColor);
 }
 .button.logout{
     background: red;
