@@ -1,10 +1,10 @@
 const express = require('express');
 const morgan = require('morgan');
 const dotenv = require('dotenv');
-const connectDB = require("./config/db.js");
+const connectDB = require("./api/config/db.js");
 const path = require("path");
 
-const userRoutes = require("./routes/userRoutes.js");
+const userRoutes = require("./api/routes/userRoutes.js");
 
 dotenv.config();
 
