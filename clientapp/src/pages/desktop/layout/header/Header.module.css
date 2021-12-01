@@ -86,3 +86,6 @@
   cursor: pointer;
   padding-left: 15px;
 }
+.active {
+  color: var(--firstDetailColor) ;
+}

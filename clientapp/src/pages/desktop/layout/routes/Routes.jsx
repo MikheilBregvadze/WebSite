@@ -8,6 +8,9 @@ import JetX from '../../jetx/JetX'
 import Games from '../../games/Games'
 import Boardgames from '../../boardgames/Boardgames'
 import Profile from '../../profile/Profile';
+import Messages from '../../messages/Messages';
+import Security from '../../security/Security'
+import Transaction from '../../transaction/Transaction'
 function Router() {
     return (
         <Routes>
@@ -19,7 +22,9 @@ function Router() {
             <Route path="/games" element={<Games />}/>
             <Route path="/boardgames" element={<Boardgames />}/>
             <Route path="/client/profile" element={<Profile />}/>
-
+            <Route path="/client/messages" element={<Messages />}/>
+            <Route path="/client/security" element={<Security />}/>
+            <Route path="/client/transaction" element={<Transaction />}/>
         </Routes>
     )
 }
