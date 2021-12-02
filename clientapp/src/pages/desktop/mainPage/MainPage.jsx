@@ -102,6 +102,9 @@ const gameNames = [{
 ]
 
 function MainPage() {
+    useEffect(() =>{
+        console.log('1')
+    })
     const videoRef = useRef(null)
     useEffect(() => {
         document.querySelectorAll(`video`).forEach((button) => {

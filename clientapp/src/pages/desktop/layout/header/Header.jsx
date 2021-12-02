@@ -21,6 +21,7 @@ function Header() {
     // const registrationHandler = () => {
         
     // }
+    
     return (
         <>
             <div className={style.header}>

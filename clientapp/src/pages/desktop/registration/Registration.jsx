@@ -7,7 +7,7 @@ import style from './Registration.module.css';
 import CustomInput from '../../../components/customInput/CustomInput'
 function Registration() {
     const [showModal, setShowModal] = useState(false);
-
+    
     const [error, setError] = useState(null)
     const [form , setForm] = useState({
         name:'',
@@ -28,8 +28,6 @@ function Registration() {
         setError(null);
         setForm({...form, [input]:e.target.value})
     }
-    
-
 
     const registrationHandler = (e) =>{
         setShowModal(true);

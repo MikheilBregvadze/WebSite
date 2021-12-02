@@ -10,10 +10,14 @@ import Boardgames from '../../boardgames/Boardgames';
 import Profile from '../../profile/Profile';
 import ProtectedRoute from './ProtectedRoute';
 import PersonalInformation from '../../profile/personalinformation/PersonalInformation';
-import Messages from '../../messages/Messages';
-import Security from '../../security/Security';
-import Transaction from '../../transaction/Transaction';
+import Messages from '../../profile/messages/Messages';
+// import SecuritySettings from '../../profile/securitysettings/SecuritySettings';
+import Transaction from '../../profile/transaction/Transaction';
+import AddBalance from '../../profile/addbalance/AddBalance';
+import BettingHistory from '../../profile/bettinghistory/BettingHistory';
+import SecuritySettings from '../../profile/securitysettings/SecuritySettings';
 
+import style from '../../profile/Profile.module.css'
 function Router() {
     return (
         <Routes>
@@ -25,12 +29,19 @@ function Router() {
             <Route path="/games" element={<Games />}/>
             <Route path="/boardgames" element={<Boardgames />}/>
 
-            <Route exact path="/client/profile" element={<div><Profile /><ProtectedRoute /></div>}>
-                <Route path="" element={<PersonalInformation />} /> 
+            <Route exact path="/client/profile" element={<div className={style.profileContainer}><Profile /><ProtectedRoute /></div>}>
+                <Route path="personalinformation" element={<PersonalInformation />} /> 
+                <Route path="addbalance" element={<AddBalance />}/>
+                <Route path="messages" element={<Messages />}/>
+                <Route path="bettinghistory" element={<BettingHistory />}/>
+                <Route path="securitysettings" element={<SecuritySettings />}/>
+                <Route path="transaction" element={<Transaction />}/>
+                
             </Route>
-            <Route path="/client/messages" element={<Messages />}/>
-            <Route path="/client/security" element={<Security />}/>
-            <Route path="/client/transaction" element={<Transaction />}/>
+            {/* <Route path="/client/profile/messages" element={<Messages />}/> */}
+
+            {/* <Route path="/client/security" element={<Security />}/>
+            <Route path="/client/transaction" element={<Transaction />}/> */}
         </Routes>
     )
 }
