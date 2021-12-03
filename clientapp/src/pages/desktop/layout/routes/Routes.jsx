@@ -13,7 +13,7 @@ import PersonalInformation from '../../profile/personalinformation/PersonalInfor
 import Messages from '../../profile/messages/Messages';
 // import SecuritySettings from '../../profile/securitysettings/SecuritySettings';
 import Transaction from '../../profile/transaction/Transaction';
-import AddBalance from '../../profile/addbalance/AddBalance';
+import Balance from '../../profile/balance/Balance';
 import BettingHistory from '../../profile/bettinghistory/BettingHistory';
 import SecuritySettings from '../../profile/securitysettings/SecuritySettings';
 
@@ -31,7 +31,7 @@ function Router() {
 
             <Route exact path="/client/profile" element={<div className={style.profileContainer}><Profile /><ProtectedRoute /></div>}>
                 <Route path="personalinformation" element={<PersonalInformation />} /> 
-                <Route path="addbalance" element={<AddBalance />}/>
+                <Route path="balance" element={<Balance />}/>
                 <Route path="messages" element={<Messages />}/>
                 <Route path="bettinghistory" element={<BettingHistory />}/>
                 <Route path="securitysettings" element={<SecuritySettings />}/>
