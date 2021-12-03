@@ -8,7 +8,7 @@ import CustomInput from '../../../components/customInput/CustomInput'
 function Registration() {
     const [showModal, setShowModal] = useState(false);
     
-    const [error, setError] = useState(null)
+    const [error, setError] = useState({})
     const [form , setForm] = useState({
         name:'',
         lastname:'',
@@ -25,8 +25,8 @@ function Registration() {
     const { authenticate } = useContext(Auth);
 
     const onChangeValue = input => e => {
-        setError(null);
         setForm({...form, [input]:e.target.value})
+        setError({...error, [input]:null})
     }
 
     const registrationHandler = (e) =>{
@@ -34,24 +34,24 @@ function Registration() {
     }
     const submitRegistration = (event) =>{
         event.preventDefault()
-        // ClientRegistration(form)
-        //     .then(res => {
-        //         if(res.data.status === 401) {
-        //             setError(res.data.errorMessage)
-        //             return false
-        //         }
-        //         if(res.data.token) {
-        //             authenticate(res.data.token);
-        //             console.log(res.data.token)
-        //         }
-        //     })
-        //     .catch(error => console.log(error))
+
         ValidateRegistration(form)
             .then( res =>{
                 if(res.data.status === 200){    
-                    console.log('200')
+                    ClientRegistration(form)
+                    .then(res => {
+                        if(res.data.status === 401) {
+                            setError(res.data.errorMessage)
+                            return false
+                        }
+                        if(res.data.token) {
+                            authenticate(res.data.token);
+                            console.log(res.data.token)
+                        }
+                    })
+                    .catch(error => console.log(error))
                 }else {
-                    console.log(res.data.errorMessages)
+                    setError(res.data.errorMessages)
                 }
             })
     }
@@ -78,47 +78,47 @@ function Registration() {
                     <div className={style.inputContainer}>
                             <span className={style.label}>Name</span>
                             <CustomInput onChangeHandler={onChangeValue('name')} id={"name"} name="name" type={'text'} inputType={"registration"}/>
-                            {false && <p>The field is required</p>}
+                            {error.name && <p> {error.name.validationError} </p>}
                     </div>    
                     <div className={style.inputContainer}>
                             <span className={style.label}>lastname</span>
                             <CustomInput onChangeHandler={onChangeValue('lastname')} id={"lastname"} name="lastname" type={'text'} inputType={"registration"}/>
-                            {false && <p>The field is required</p>}
+                            {error.lastname && <p>{error.lastname.validationError}</p>}
                     </div>    
                     <div className={style.inputContainer}>
                             <span className={style.label}>mobilenumber</span>
                             <CustomInput onChangeHandler={onChangeValue('mobilenumber')} id={"mobilenumber"} name="mobilenumber" type={'number'} inputType={"registration"} />
-                            {false && <p>The field is required</p>}
+                            {error.mobilenumber && <p>{error.mobilenumber.validationError}</p>}
                     </div>    
                     <div className={style.inputContainer}>
                             <span className={style.label}>E-mail</span>
                             <CustomInput onChangeHandler={onChangeValue('email')} id={"email"} name="email" type={'email'} inputType={"registration"}  />
-                            {false && <p>The field is required</p>}
+                            {error.email && <p>{error.email.validationError}</p>}
                     </div>    
                     <div className={style.inputContainer}>
                             <span className={style.label}>Username</span>
                             <CustomInput onChangeHandler={onChangeValue('username')} id={"username"} name="username" type={'text'} inputType={"registration"}/>
-                            {false && <p>The field is required</p>}
+                            {error.username && <p>{error.username.validationError}</p>}
                     </div>    
                     <div className={style.inputContainer}>
                             <span className={style.label}>Password</span>
                             <CustomInput onChangeHandler={onChangeValue('password')} id={"password"} name="password" type={'password'} inputType={"registration"}  />
-                            {false && <p>The field is required</p>}
+                            {error.password && <p>{error.password.validationError}</p>}
                     </div>    
                     <div className={style.inputContainer}>
                             <span className={style.label}>Repeat password</span>
                             <CustomInput onChangeHandler={onChangeValue('confirm_password')} id={"confirm_password"} name="confirm_password" type={'password'} inputType={"registration"} />
-                            {false && <p>The field is required</p>}
+                            {error.name && <p>{error.name.validationError}</p>}
                     </div>    
                     <div className={style.inputContainer}>
                             <span className={style.label}>ID Number</span>
                             <CustomInput onChangeHandler={onChangeValue('id')} id={"idnumber"} name="idnumber" type={'text'} inputType={"registration"} />
-                            {false && <p>The field is required</p>}
+                            {error.id && <p>{error.id.validationError}</p>}
                     </div> 
                     <div className={style.inputContainer}>
                             <span className={style.label}>Date of birth</span>
                             <CustomInput onChangeHandler={onChangeValue('dateofbirth')} id={"dateofbirth"} name="dateofbirth" type={'date'} inputType={"registration"} />
-                            {false && <p>The field is required</p>}
+                            {error.dateofbirth && <p>{error.dateofbirth.validationError}</p>}
                     </div>  
                     <div className={style.inputContainer}>
                         <CustomButton 
