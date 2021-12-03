@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
 import CustomButton from '../../../components/customButton/CustomButton';
 import CustomModal from '../../../components/customModal/CustomModal';
-import { ClientRegistration } from '../../../services/services'
+import { ClientRegistration , ValidateRegistration} from '../../../services/services'
 import { Auth } from '../../../services/context/AuthContext'
 import style from './Registration.module.css';
 import CustomInput from '../../../components/customInput/CustomInput'
@@ -33,20 +33,27 @@ function Registration() {
         setShowModal(true);
     }
     const submitRegistration = (event) =>{
-        console.log(form)
         event.preventDefault()
-        ClientRegistration(form)
-            .then(res => {
-                if(res.data.status === 401) {
-                    setError(res.data.errorMessage)
-                    return false
-                }
-                if(res.data.token) {
-                    authenticate(res.data.token);
-                    console.log(res.data.token)
+        // ClientRegistration(form)
+        //     .then(res => {
+        //         if(res.data.status === 401) {
+        //             setError(res.data.errorMessage)
+        //             return false
+        //         }
+        //         if(res.data.token) {
+        //             authenticate(res.data.token);
+        //             console.log(res.data.token)
+        //         }
+        //     })
+        //     .catch(error => console.log(error))
+        ValidateRegistration(form)
+            .then( res =>{
+                if(res.data.status === 200){    
+                    console.log('200')
+                }else {
+                    console.log(res.data.errorMessages)
                 }
             })
-            .catch(error => console.log(error))
     }
     const closeModal = () => {
         setShowModal(!showModal);

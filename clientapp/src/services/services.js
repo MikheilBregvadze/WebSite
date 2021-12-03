@@ -24,6 +24,9 @@ export const ClientAuthorization = (data) => {
 export const ClientRegistration = (data) => {
     return axios.post('/api/users', data);
 }
+export const ValidateRegistration = (data) => {
+    return axios.post('/api/users/validate', data);
+}
 // Authorized Calls
 export const GetClientInfo = () => {
     return AuthorizedGet('/api/users/profile');
