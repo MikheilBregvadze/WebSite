@@ -110,7 +110,7 @@ function Registration() {
                     </div> 
                     <div className={style.inputContainer}>
                             <span className={style.label}>Date of birth</span>
-                            <CustomInput onChangeHandler={onChangeValue('dateofbirth')} id={"dateofbirth"} name="dateofbirth" type={'text'} inputType={"registration"} />
+                            <CustomInput onChangeHandler={onChangeValue('dateofbirth')} id={"dateofbirth"} name="dateofbirth" type={'date'} inputType={"registration"} />
                             {false && <p>The field is required</p>}
                     </div>  
                     <div className={style.inputContainer}>

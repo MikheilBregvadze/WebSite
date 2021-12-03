@@ -1,0 +1,12 @@
+.addBalanceContainer {
+    width: 890px;
+    padding-top: 30px;
+    margin-top: 30px;
+    background: #00000005;
+    border: 1px solid var(--detailGray);
+    padding: 30px 5px 0px 5px;
+    background-image: url(../../../../assets/images/bank.png);
+    background-repeat: no-repeat;
+    background-size: 250px;
+    background-position: left top;
+}
