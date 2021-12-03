@@ -2,6 +2,90 @@ const asyncHandler = require('express-async-handler');
 const generateToken = require('../utils/generateToken');
 const User = require('../models/userModel');
 
+const registerUserValidation = asyncHandler(async (req, res) => {
+    const { id, name, lastname, username, email, dateofbirth, mobilenumber, mobilecode, password, confirm_password } = req.body;
+
+    const dateOfBirth = dateofbirth.split('/').reverse();
+    const age = _calculateAge(new Date(dateOfBirth[0], dateOfBirth[2], dateOfBirth[1]));
+    const emailExists = await User.findOne({ email });
+    const usernameExists = await User.findOne({ username });
+    const idExists = await User.findOne({ id });
+    const fieldsArray = [];
+    if(name.length < 3) {
+        fieldsArray.push({
+            isValid: false,
+            fieldName: 'name',
+            validationError: "Firstname in not valid"
+        })
+    }
+    if(lastname.length < 3) {
+        fieldsArray.push({
+            isValid: false,
+            fieldName: 'lastname',
+            validationError: "Lastname in not valid"
+        })
+    }
+    if(mobilenumber.length < 3) {
+        fieldsArray.push({
+            isValid: false,
+            fieldName: 'mobilenumber',
+            validationError: "Phone number in not valid"
+        })
+    }
+    const emailToValidate = email;
+    const emailRegexp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
+    if(!emailRegexp.test(emailToValidate)) {
+        fieldsArray.push({
+            isValid: false,
+            fieldName: 'email',
+            validationError: "Email is invalid"
+        })
+    } else {
+        if (emailExists) {
+            fieldsArray.push({
+            isValid: false,
+            fieldName: 'email',
+            validationError: "Email already taken"
+        })
+    } 
+    }
+    if (idExists) {
+        fieldsArray.push({
+            isValid: false,
+            fieldName: 'userid',
+            validationError: "Id number already taken"
+        })
+    } 
+    if (age < 18) {
+        fieldsArray.push({
+            isValid: false,
+            fieldName: 'dateofbirth',
+            validationError: "Date is invalid"
+        })
+    } 
+    if (usernameExists) {
+        fieldsArray.push({
+            isValid: false,
+            fieldName: 'username',
+            validationError: "Username already taken"
+        })
+    } 
+    if (password !== confirm_password) {
+        fieldsArray.push({
+            isValid: false,
+            fieldName: 'password',
+            validationError: "Password is not the same"
+        })
+    } 
+
+    if(fieldsArray.length > 0) {
+        res.json({ status: 400, errorMessages: fieldsArray });
+        throw new Error('User not found');
+    } else {
+        res.json({ status: 200});
+    }
+})
+
 const registerUser = asyncHandler(async (req, res) => {
     const { id, name, lastname, username, email, dateofbirth, mobilenumber, mobilecode, password, confirm_password } = req.body;
 
@@ -92,7 +176,8 @@ const getUserProfile = asyncHandler(async (req, res) => {
 module.exports = {
     authUser,
     registerUser,
-    getUserProfile
+    getUserProfile,
+    registerUserValidation
 };
 
 
