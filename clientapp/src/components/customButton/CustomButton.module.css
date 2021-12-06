@@ -60,3 +60,12 @@
     background: #49e53e;
     color: var(--mainBlack);
 }
+.deposit{
+    background: var(--firstDetailColor);
+    height: 30px;
+    font-family: var(--fontMedium);
+}
+.deposit:hover{
+    background: var(--firstDetailHover);
+    color: var(--mainBlack);
+}
