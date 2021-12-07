@@ -11,12 +11,12 @@ function Messages() {
                 <span className={style.text}>Do you want to use SMS service?</span>
                 <div>
                     <span className={style.inputContainer}>
-                        <input type="radio" name="input" id="yes"/>YES
-                        <label htmlFor="yes"></label>
+                        <input type="radio" name="input" id="yes" checked/>
+                        <label htmlFor="yes">YES</label>
                     </span>
                     <span className={style.inputContainer}>
-                        <input type="radio" name="input" id="no"/>NO
-                        <label htmlFor="input"></label>
+                        <input type="radio" name="input" id="no" />
+                        <label htmlFor="no">NO</label>
                     </span>
                 </div>
             </div>

@@ -9,7 +9,7 @@ function ActiveUser(props) {
         navigate('/client/profile/personalinformation')
     }
     const balanceClick = () =>{
-        navigate('/client/profile/addbalance')
+        navigate('/client/profile/balance')
     }
     return (
         <div className={style.userDiv}>

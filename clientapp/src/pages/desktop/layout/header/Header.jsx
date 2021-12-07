@@ -9,7 +9,6 @@ import { Auth } from '../../../../services/context/AuthContext';
 import ActiveUser from '../../authentication/activeUser/ActiveUser';
 import Registration from '../../registration/Registration';
 import { getItemFromLocalStorage } from '../../../../services/common';
-
 function Header() {
     const { auth, clientInfo, logOut } = useContext(Auth);
     

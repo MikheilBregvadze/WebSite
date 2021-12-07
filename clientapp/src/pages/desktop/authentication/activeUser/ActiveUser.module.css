@@ -15,9 +15,11 @@
 .userName{
     position: relative;
     font-family: var(--fontBold);
-    width: 73px;
+    width: auto;
     text-align: right;
     margin-left: 20px;
+    display: flex;
+    align-items: center;
 }
 .userName:hover{
     transition: .1s ease;
@@ -27,15 +29,15 @@
 .navigation:hover{
     display: flex;
 }
-.userName::after{
+.userName::before{
     content: '';
     background: url('../../../../assets/images/userIcon.png') center;
     width: 20px;
     height: 20px;
-    position: absolute;
     left: 0;
     top: -1px;
     background-size: cover;
+    padding-left: 7px;
 }
 .navigation{
     position: absolute;

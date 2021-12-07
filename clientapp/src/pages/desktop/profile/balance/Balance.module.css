@@ -1,12 +1,101 @@
-.addBalanceContainer {
+.balanceContainer {
     width: 890px;
     padding-top: 30px;
     margin-top: 30px;
     background: #00000005;
     border: 1px solid var(--detailGray);
     padding: 30px 5px 0px 5px;
+    position: relative;
+}
+.logo{
     background-image: url(../../../../assets/images/bank.png);
+    width: calc(100% - 200px);
+    height: 150px;
     background-repeat: no-repeat;
-    background-size: 250px;
-    background-position: left top;
+    background-position: -25px -15px;
+    padding-left: 169px;
+    display: flex;
+    align-items: center;
+    color: var(--mainGray);
+    font-size: var(--fontSizeSm);
+    border: 2px dashed var(--detailGray);
+    margin-top: -20px;
+}
+.deposit{
+    color: var(--errorRed);
+    font-family: var(--fontBold);
+    padding-left: 12px;
+}
+.table{
+    width: 100%;
+    margin-top: 20px;
+}
+.header{
+    font-family: var(--fontBold);
+    background: var(--firstDetailColor);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    color: var(--detailGray);
+    height: 55px;
+}
+.row{
+    font-size: 14px;
+    height: 45px;
+    background: var(--detailGray);
+}
+.row,
+.header{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin: 5px 0;
+}
+.row span,
+.header span{
+    width: 19%;
+    line-height: 45px;
+    height: 45px;
+}
+.instruction{
+    cursor: pointer;
+}
+.instruction:hover{
+    text-decoration: underline;
+}
+.bog{
+    background: url(../../../../assets/images/bog.png) no-repeat center;
+    background-size: contain;
+}
+.any{
+    background: url(../../../../assets/images/anythingBank.png) no-repeat center;
+    background-size: contain;
+}
+.tbc{
+    background: url(../../../../assets/images/tbc.png) no-repeat center;
+    background-size: contain;
+}
+.other{
+    background: url(../../../../assets/images/other.png) no-repeat center;
+    background-size: contain;
+}
+ul{
+    list-style: none;
+    display: inline-block;
+}
+.navTabs{
+    position: absolute;
+    top: 6px;
+}
+.navTabs span{
+    padding-left: 20px;
+    cursor: pointer;
+    color: var(--firstDetailColor);
+    font-family: var(--fontBold);
+}
+.navTabs span:hover{
+    color: #b98b00;
+}
+.navTabs span.active{
+    color: red !important;
 }

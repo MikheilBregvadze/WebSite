@@ -31,7 +31,8 @@
     font-size: 12px;
     position: absolute;
     top: 40px;
-    margin-left: 48px;
+    width: 220px;
+    margin-left: 148px;
 }
 .termsCondition{
     color: #918f8f;
