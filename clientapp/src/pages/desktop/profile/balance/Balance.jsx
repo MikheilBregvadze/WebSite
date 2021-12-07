@@ -18,7 +18,6 @@ function AddBalance() {
                     <span onClick={() => click(1)} className={ tabIndex === 1? style.active: ''}>WITHDRAW</span>
                 </div>
                 { tabIndex === 0 ?<div className={style.addBalance} >
-                    <div className={style.deposit} >Deposit</div>
                     <div className={style.logo} >You have not linked any card yet Save the card on funds deposit. Save time using linked cards in future.</div>
                     <div className={style.table}>
                         <div className={style.header} >
@@ -57,9 +56,6 @@ function AddBalance() {
                 </div>
                 :
                 <div className={style.addBalance} >
-                    <div className={style.deposit} >
-                        whithdraw
-                    </div>
                     <div className={style.logo} >
                         You have not linked any card yet Save the card on funds deposit. Save time using linked cards in future.
                     </div>
