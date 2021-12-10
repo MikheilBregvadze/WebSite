@@ -85,17 +85,19 @@ ul{
 }
 .navTabs{
     position: absolute;
-    top: 6px;
+    top: 20px;
 }
 .navTabs span{
-    padding-left: 20px;
+    padding: 0 10px;
     cursor: pointer;
     color: var(--firstDetailColor);
     font-family: var(--fontBold);
+    border-bottom: 1px solid var(--detailGray);
 }
 .navTabs span:hover{
     color: #b98b00;
 }
 .navTabs span.active{
-    color: red !important;
+    border-bottom: 1px solid var(--firstDetailColor);
+    transition: 0.2s;
 }

@@ -1,17 +1,29 @@
 import React ,{ useState } from 'react';
 import style from './Balance.module.css';
 import CustomButton from '../../../../components/customButton/CustomButton';
+import CustomModal from '../../../../components/customModal/CustomModal'
 import '../../../../assets/images/bank.png';
 function AddBalance() {
-    const deposit = () => {
+    const [showModal, setShowModal] = useState(false);
+    // const deposit = () => {
         
-    }
+    // }
     const [tabIndex,setTabIndex] = useState(0);
     const click = (index) =>{
         setTabIndex(index)
     }
+    const closeModal = () => {
+        setShowModal(!showModal);
+    }
+    const deposit = (e) =>{
+        setShowModal(true);
+    }
     return (
         <>
+            <CustomModal
+                isOpen={showModal}
+                closeModal={closeModal}
+            />
             <div className={style.balanceContainer}>
                 <div className={style.navTabs} >
                     <span onClick={() => click(0)} className={ tabIndex === 0 ? style.active: ''} >ADD BALANCE</span>
