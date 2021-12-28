@@ -16,12 +16,12 @@ import Transaction from '../../profile/transaction/Transaction';
 import Balance from '../../profile/balance/Balance';
 import BettingHistory from '../../profile/bettinghistory/BettingHistory';
 import SecuritySettings from '../../profile/securitysettings/SecuritySettings';
-import { initGA } from '../../../..';
+import { GApageView } from '../../../..';
 
 import style from '../../profile/Profile.module.css'
 function Router() {
     const {pathname} = useLocation();
-    useEffect(() => { initGA(pathname); }, [pathname]);
+    useEffect(() => { GApageView(pathname); }, [pathname]);
     return (
         <Routes>
             <Route path="/" element={<MainPage />}/>

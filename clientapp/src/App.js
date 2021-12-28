@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Router from './pages/desktop/layout/routes/Routes';
 import Header from './pages/desktop/layout/header/Header';
 import { Auth, AuthContext } from './services/context/AuthContext';
