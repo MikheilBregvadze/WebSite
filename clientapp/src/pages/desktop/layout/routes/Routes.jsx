@@ -1,5 +1,5 @@
-import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import MainPage from '../../mainPage/MainPage';
 import Casino from '../../casino/Casino';
 import Slots from '../../slots/Slots';
@@ -16,9 +16,12 @@ import Transaction from '../../profile/transaction/Transaction';
 import Balance from '../../profile/balance/Balance';
 import BettingHistory from '../../profile/bettinghistory/BettingHistory';
 import SecuritySettings from '../../profile/securitysettings/SecuritySettings';
+import { initGA } from '../../../..';
 
 import style from '../../profile/Profile.module.css'
 function Router() {
+    const {pathname} = useLocation();
+    useEffect(() => { initGA(pathname); }, [pathname]);
     return (
         <Routes>
             <Route path="/" element={<MainPage />}/>
