@@ -7,9 +7,9 @@ import App from './App';
 const baseUrl = document.getElementsByTagName('base')[0].getAttribute('href');
 const rootElement = document.getElementById('root');
 
-export const initGA = () => {       
-  ReactGA.initialize('G-5MH2XEDC0N'); 
-} 
+// export const initGA = () => {       
+//   ReactGA.initialize('G-5MH2XEDC0N'); 
+// } 
 
 export const GApageView = (page) => {   
   ReactGA.pageview(page);   
