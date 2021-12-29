@@ -1,10 +1,11 @@
 import React, { useState, useContext } from 'react';
+import ReactGA from 'react-ga';
 import CustomButton from '../../../components/customButton/CustomButton';
 import CustomModal from '../../../components/customModal/CustomModal';
 import { ClientRegistration , ValidateRegistration} from '../../../services/services'
 import { Auth } from '../../../services/context/AuthContext'
-import style from './Registration.module.css';
 import CustomInput from '../../../components/customInput/CustomInput'
+import style from './Registration.module.css'
 function Registration() {
     const [showModal, setShowModal] = useState(false);
     
@@ -31,6 +32,10 @@ function Registration() {
 
     const registrationHandler = (e) =>{
         setShowModal(true);
+        ReactGA.event({
+            category: 'User',
+            action: 'Open Registration Modal!'
+          });
     }
     const submitRegistration = (event) =>{
         event.preventDefault()
