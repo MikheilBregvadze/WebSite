@@ -12,7 +12,7 @@ export const initGA = () => {
 } 
 
 export const GApageView = (page) => {   
-  ReactGA.pageview(page);   
+  ReactGA.send(page);   
 }
 
 ReactDOM.render(
