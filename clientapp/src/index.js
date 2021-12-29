@@ -6,8 +6,8 @@ import App from './App';
 
 const baseUrl = document.getElementsByTagName('base')[0].getAttribute('href');
 const rootElement = document.getElementById('root');
-const TRACKING_ID = "UA-216007932-1";
-ReactGA.initialize(TRACKING_ID);
+// const TRACKING_ID = "UA-216007932-1";
+// ReactGA.initialize(TRACKING_ID);
 
 ReactDOM.render(
   <BrowserRouter basename={baseUrl}>
