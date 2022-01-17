@@ -1,7 +1,6 @@
 import React, { useEffect , useRef} from 'react';
 import Slider from '../../../components/slider/Slider';
 import style from './MainPage.module.css';
-import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, {Navigation, Pagination, Autoplay} from 'swiper';
 import 'swiper/swiper-bundle.css';
 SwiperCore.use([Navigation, Pagination, Autoplay]);
@@ -102,9 +101,7 @@ const gameNames = [{
 ]
 
 function MainPage() {
-    useEffect(() =>{
-        console.log('1')
-    })
+    
     const videoRef = useRef(null)
     useEffect(() => {
         document.querySelectorAll(`video`).forEach((button) => {

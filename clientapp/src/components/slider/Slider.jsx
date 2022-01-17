@@ -13,11 +13,21 @@ function Slider(props) {
               slidesPerView={1}
               navigation
               scrollbar={{ draggable: true }}
-              autoplay={true}
+              
+              speed={500}
               pagination={{ clickable: true }}
-              loop={true}
               onSwiper={(swiper) => console.log(swiper)}
-              onSlideChange={() => console.log('slide change')}
+              onSlideChange={(swiper) => console.log(swiper)}
+              disableOnInteraction = {true}
+              onTransitionStart={(swiper) => {
+                swiper.autoplay={
+                    delay:200,
+                    disableOnInteraction:false
+                }
+              }}
+              onTransitionEnd={(swiper) => {
+                swiper.autoplay = false
+            }}
             >
             {props.sliderItemObject.map(sliderItem => 
                 <SwiperSlide 
